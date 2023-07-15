@@ -1,0 +1,56 @@
+.message-content h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+.message-content h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+.message-content h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+.message-content h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+.message-content h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+.message-content h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+.message-content ul {
+    list-style: disc;
+    margin: 0.5em 0;
+    padding-left: 20px;
+}
+
+.message-content ol {
+    list-style: decimal;
+    margin: 1em 0;
+    padding-left: 20px;
+}
+
+.message-content table {
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.message-content th,
+td {
+    border: 1px solid rgba(150, 150, 200, .3);
+    padding: 8px;
+}
+
+span.katex-html {
+    margin: 8px;
+}
