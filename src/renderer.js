@@ -43,7 +43,17 @@ function onLoad() {
     //TODO: 添加缓存
     loadCSSFromURL(`https://lib.baomitu.com/KaTeX/0.16.8/katex.css`);
 
-    setInterval(render, 10);
+    const observer = new MutationObserver((mutationsList) => {
+        for (let mutation of mutationsList) {
+            if (mutation.type === "childList") {
+                render();
+            }
+        }
+    });
+
+    const targetNode = document.body;
+    const config = { childList: true, subtree: true };
+    observer.observe(targetNode, config);
 }
 
 // 打开设置界面时触发
