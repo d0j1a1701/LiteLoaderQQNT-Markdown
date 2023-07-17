@@ -5,7 +5,7 @@
     "slug": "markdown_it",
     "thumbnail": "./icon.png",
     "description": "为 QQNT 提供 Markdown 渲染",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "author": [
         {
             "name": "d0j1a_1701",
