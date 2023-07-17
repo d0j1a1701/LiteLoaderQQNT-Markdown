@@ -8,13 +8,17 @@ function render() {
     elements.forEach(async (element) => {
         // 特判 @
         if (element.className.includes("text-element--at")) return;
-
+        // 将 QQ 默认生成的 link 合并到 上一个 span 中
+        if (element.nextElementSibling && element.nextElementSibling.className && element.nextElementSibling.className.includes("text-link")) {
+            element.textContent += element.nextElementSibling.textContent;
+            element.parentNode.removeChild(element.nextElementSibling);
+        }
         const renderedHTML = await markdown_it.render(element.textContent);
         const tempElement = document.createElement("div");
         tempElement.innerHTML = renderedHTML;
         var elements = tempElement.querySelectorAll("a");
         elements.forEach((e) => {
-            e.classList.add("markdown_it_link");
+            e.classList.add("text-link"); // 使用标准 link class 以适应主题
             e.onclick = async (event) => {
                 event.preventDefault();
                 const href = event
@@ -56,7 +60,7 @@ function onLoad() {
 }
 
 // 打开设置界面时触发
-function onConfigView(view) {}
+function onConfigView(view) { }
 
 // 这两个函数都是可选的
 export { onLoad, onConfigView };

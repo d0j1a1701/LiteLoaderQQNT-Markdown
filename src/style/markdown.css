@@ -55,3 +55,8 @@ td {
 span.katex-html {
     margin: 8px;
 }
+
+blockquote {
+    padding: 0 1em;
+    border-left: .25em solid #dfe2e5;
+}
