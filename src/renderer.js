@@ -6,6 +6,9 @@ function render() {
         ".message-content > span > span"
     );
     elements.forEach(async (element) => {
+        // 特判 @
+        if (element.className.includes("text-element--at")) return;
+
         const renderedHTML = await markdown_it.render(element.textContent);
         const tempElement = document.createElement("div");
         tempElement.innerHTML = renderedHTML;
