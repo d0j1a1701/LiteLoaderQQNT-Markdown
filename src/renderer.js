@@ -9,21 +9,17 @@ function render() {
         const renderedHTML = await markdown_it.render(element.textContent);
         const tempElement = document.createElement("div");
         tempElement.innerHTML = renderedHTML;
-        element.replaceWith(...tempElement.childNodes);
-    });
-
-    setTimeout(() => {
-        var elements = document.querySelectorAll("a");
+        var elements = tempElement.querySelectorAll("a");
         elements.forEach((e) => {
-            e.onclick = async (e) => {
-                e.preventDefault();
-                await markdown_it.open_link(
-                    e.path[0].href.replace("app://./renderer/", "")
-                );
+            e.onclick = async (event) => {
+                event.preventDefault();
+                const href = event.composedPath()[0].href.replace("app://./renderer/", "");
+                await markdown_it.open_link(href);
                 return false;
             };
         });
-    }, 100);
+        element.replaceWith(...tempElement.childNodes);
+    });
 }
 
 function loadCSSFromURL(url) {
@@ -38,10 +34,7 @@ function onLoad() {
 
     loadCSSFromURL(`${plugin_path}/src/style/markdown.css`);
     loadCSSFromURL(`${plugin_path}/src/style/hljs-github-dark.css`);
-
-    //包含大量字体，本地引入是不现实的
-    //TODO: 添加缓存
-    loadCSSFromURL(`https://lib.baomitu.com/KaTeX/0.16.8/katex.css`);
+    loadCSSFromURL(`${plugin_path}/src/style/katex.css`);
 
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
@@ -57,7 +50,7 @@ function onLoad() {
 }
 
 // 打开设置界面时触发
-function onConfigView(view) {}
+function onConfigView(view) { }
 
 // 这两个函数都是可选的
 export { onLoad, onConfigView };
