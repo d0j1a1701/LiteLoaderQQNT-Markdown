@@ -15,10 +15,12 @@ function render() {
         }
         const renderedHTML = await markdown_it.render(element.textContent);
         const tempElement = document.createElement("div");
+        tempElement.classList.add('markdown-body');
         tempElement.innerHTML = renderedHTML;
         var elements = tempElement.querySelectorAll("a");
         elements.forEach((e) => {
-            e.classList.add("text-link"); // 使用标准 link class 以适应主题
+            e.classList.add("markdown_it_link");
+            // e.classList.add("text-link");
             e.onclick = async (event) => {
                 event.preventDefault();
                 const href = event
@@ -43,7 +45,7 @@ function onLoad() {
     const plugin_path = LiteLoader.plugins.markdown_it.path.plugin;
 
     loadCSSFromURL(`${plugin_path}/src/style/markdown.css`);
-    loadCSSFromURL(`${plugin_path}/src/style/hljs-github-dark.css`);
+    loadCSSFromURL(`${plugin_path}/src/style/hljs-github.css`);
     loadCSSFromURL(`${plugin_path}/src/style/katex.css`);
 
     const observer = new MutationObserver((mutationsList) => {

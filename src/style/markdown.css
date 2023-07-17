@@ -60,3 +60,30 @@ blockquote {
     padding: 0 1em;
     border-left: .25em solid #dfe2e5;
 }
+
+@media (prefers-color-scheme: light) {
+    a.markdown_it_link {
+        color: #1589e9;
+        text-decoration: underline;
+    }
+
+    a.markdown_it_link:hover {
+        color: #30a9de;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    a.markdown_it_link {
+        color: white;
+        text-decoration: underline;
+    }
+
+    a.markdown_it_link:hover {
+        color: #9ab4cf;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
