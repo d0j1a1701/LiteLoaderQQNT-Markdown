@@ -20,7 +20,7 @@ function render() {
         var elements = tempElement.querySelectorAll("a");
         elements.forEach((e) => {
             e.classList.add("markdown_it_link");
-            // e.classList.add("text-link");
+            e.classList.add("text-link");
             e.onclick = async (event) => {
                 event.preventDefault();
                 const href = event
