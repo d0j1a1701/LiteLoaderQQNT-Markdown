@@ -1,0 +1,7 @@
+{
+    "dependencies": {
+        "@traptitech/markdown-it-katex": "^3.6.0",
+        "markdown-it": "^13.0.1",
+        "markdown-it-pangu": "^1.0.2"
+    }
+}

@@ -5,6 +5,8 @@ const { shell, ipcMain } = require("electron");
 function onLoad(plugin, liteloader) {
     const plugin_path = plugin.path.plugin;
     const hljs = require(`${plugin_path}/src/lib/highlight.js`);
+    const katex = require(`${plugin_path}/src/lib/markdown-it-katex.js`);
+    const pangu = require(`${plugin_path}/src/lib/markdown-it-pangu.js`)
     const mark = require(`${plugin_path}/src/lib/markdown-it.js`)({
         html: false, // 在源码中启用 HTML 标签
         xhtmlOut: true, // 使用 '/' 来闭合单标签 （比如 <br />）。
@@ -43,10 +45,9 @@ function onLoad(plugin, liteloader) {
                 "</code></pre>"
             );
         }
-    }),
-        katex = require(`${plugin_path}/src/lib/markdown-it-katex.js`);
-
-    mark.use(katex);
+    })
+        .use(katex)
+        .use(pangu);
 
     ipcMain.handle("LiteLoader.markdown_it.render", (event, content) => {
         return mark.render(content);
