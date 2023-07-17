@@ -3,7 +3,7 @@ const { shell, ipcMain } = require("electron");
 
 // 加载插件时触发
 function onLoad(plugin, liteloader) {
-    const plugin_path = liteloader.plugins.markdown_it.path.plugin;
+    const plugin_path = plugin.path.plugin;
     const hljs = require(`${plugin_path}/src/lib/highlight.js`);
     const mark = require(`${plugin_path}/src/lib/markdown-it.js`)({
         html: false, // 在源码中启用 HTML 标签
