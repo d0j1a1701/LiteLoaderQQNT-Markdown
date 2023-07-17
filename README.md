@@ -9,7 +9,7 @@
 ## Features
 
 - 标准 Markdown 语法；
-- 基于 $\KaTeX$ 的公式渲染；
+- 基于 $KaTeX$ 的公式渲染；
 - 基于 `pangu.js` 的中英文混排优化；
 
 ## 注意事项
