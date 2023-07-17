@@ -11,9 +11,12 @@ function render() {
         tempElement.innerHTML = renderedHTML;
         var elements = tempElement.querySelectorAll("a");
         elements.forEach((e) => {
+            e.classList.add("markdown_it_link");
             e.onclick = async (event) => {
                 event.preventDefault();
-                const href = event.composedPath()[0].href.replace("app://./renderer/", "");
+                const href = event
+                    .composedPath()[0]
+                    .href.replace("app://./renderer/", "");
                 await markdown_it.open_link(href);
                 return false;
             };
@@ -50,7 +53,7 @@ function onLoad() {
 }
 
 // 打开设置界面时触发
-function onConfigView(view) { }
+function onConfigView(view) {}
 
 // 这两个函数都是可选的
 export { onLoad, onConfigView };
