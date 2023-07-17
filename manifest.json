@@ -3,6 +3,7 @@
     "type": "extension",
     "name": "Markdown-it",
     "slug": "markdown_it",
+    "thumbnail": "./icon.png",
     "description": "为 QQNT 提供 Markdown 渲染",
     "version": "0.2.0",
     "author": [
