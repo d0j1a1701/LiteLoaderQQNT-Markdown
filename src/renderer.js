@@ -42,7 +42,7 @@ function loadCSSFromURL(url) {
 }
 
 function onLoad() {
-    const plugin_path = LiteLoader.plugins.markdown_it.path.plugin;
+    const plugin_path = betterQQNT.plugins.markdown_it.path.plugin;
 
     loadCSSFromURL(`${plugin_path}/src/style/markdown.css`);
     loadCSSFromURL(`${plugin_path}/src/style/hljs-github.css`);
