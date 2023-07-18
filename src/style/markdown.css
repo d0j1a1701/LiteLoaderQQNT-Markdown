@@ -82,3 +82,7 @@ blockquote {
         color: #9ab4cf;
     }
 }
+
+code {
+    font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+}
