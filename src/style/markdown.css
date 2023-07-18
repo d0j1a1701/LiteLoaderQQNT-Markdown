@@ -86,3 +86,7 @@ blockquote {
 code {
     font-family: 'Fira Code', Consolas, 'Courier New', monospace;
 }
+
+em {
+    font-style: italic;
+}
