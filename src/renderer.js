@@ -42,7 +42,10 @@ function loadCSSFromURL(url) {
 }
 
 function onLoad() {
-    const plugin_path = betterQQNT.plugins.markdown_it.path.plugin;
+    // Polyfix
+    if (typeof (liteLoader) === "undefined") LiteLoader = betterQQNT;
+
+    const plugin_path = LiteLoader.plugins.markdown_it.path.plugin;
 
     loadCSSFromURL(`file://${plugin_path}/src/style/markdown.css`);
     loadCSSFromURL(`file://${plugin_path}/src/style/hljs-github.css`);

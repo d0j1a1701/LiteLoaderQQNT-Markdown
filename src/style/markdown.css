@@ -90,3 +90,8 @@ code {
 em {
     font-style: italic;
 }
+
+span>p>img {
+    max-width: 100%;
+    height: auto;
+}
