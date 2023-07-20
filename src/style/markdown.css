@@ -83,7 +83,10 @@ blockquote {
     }
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+code {
+    font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+}
+
+em {
+    font-style: italic;
 }

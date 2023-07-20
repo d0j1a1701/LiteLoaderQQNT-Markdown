@@ -42,11 +42,11 @@ function loadCSSFromURL(url) {
 }
 
 function onLoad() {
-    const plugin_path = LiteLoader.plugins.markdown_it.path.plugin;
+    const plugin_path = betterQQNT.plugins.markdown_it.path.plugin;
 
-    loadCSSFromURL(`${plugin_path}/src/style/markdown.css`);
-    loadCSSFromURL(`${plugin_path}/src/style/hljs-github.css`);
-    loadCSSFromURL(`${plugin_path}/src/style/katex.css`);
+    loadCSSFromURL(`file://${plugin_path}/src/style/markdown.css`);
+    loadCSSFromURL(`file://${plugin_path}/src/style/hljs-github.css`);
+    loadCSSFromURL(`file://${plugin_path}/src/style/katex.css`);
 
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
