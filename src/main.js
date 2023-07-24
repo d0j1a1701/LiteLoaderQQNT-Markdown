@@ -11,7 +11,7 @@ function onLoad(plugin, liteloader) {
         html: false, // 在源码中启用 HTML 标签
         xhtmlOut: true, // 使用 '/' 来闭合单标签 （比如 <br />）。
         // 这个选项只对完全的 CommonMark 模式兼容。
-        breaks: false, // 转换段落里的 '\n' 到 <br>。
+        breaks: true, // 转换段落里的 '\n' 到 <br>。
         langPrefix: "language-", // 给围栏代码块的 CSS 语言前缀。对于额外的高亮代码非常有用。
         linkify: true, // 将类似 URL 的文本自动转换为链接。
 
