@@ -1,5 +1,5 @@
 {
-    "manifest_version": 1,
+    "manifest_version": 3,
     "type": "extension",
     "name": "Markdown-it",
     "slug": "markdown_it",

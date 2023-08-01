@@ -47,9 +47,9 @@ function onLoad() {
 
     const plugin_path = LiteLoader.plugins.markdown_it.path.plugin;
 
-    loadCSSFromURL(`file://${plugin_path}/src/style/markdown.css`);
-    loadCSSFromURL(`file://${plugin_path}/src/style/hljs-github.css`);
-    loadCSSFromURL(`file://${plugin_path}/src/style/katex.css`);
+    loadCSSFromURL(`llqqnt://local-file/${plugin_path}/src/style/markdown.css`);
+    loadCSSFromURL(`llqqnt://local-file/${plugin_path}/src/style/hljs-github.css`);
+    loadCSSFromURL(`llqqnt://local-file/${plugin_path}/src/style/katex.css`);
 
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
