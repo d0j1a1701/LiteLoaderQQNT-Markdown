@@ -43,7 +43,7 @@ function loadCSSFromURL(url) {
 
 function onLoad() {
     // Polyfix
-    if (typeof (liteLoader) === "undefined") LiteLoader = betterQQNT;
+    if (typeof (LiteLoader) === "undefined") LiteLoader = betterQQNT;
 
     const plugin_path = LiteLoader.plugins.markdown_it.path.plugin;
 
@@ -67,5 +67,4 @@ function onLoad() {
 // 打开设置界面时触发
 function onConfigView(view) { }
 
-// 这两个函数都是可选的
 export { onLoad };

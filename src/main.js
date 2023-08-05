@@ -48,11 +48,9 @@ function onLoad(plugin) {
     })
         .use(katex)
         .use(pangu);
-
     ipcMain.handle("LiteLoader.markdown_it.render", (event, content) => {
         return mark.render(content);
     });
-
     ipcMain.handle("LiteLoader.markdown_it.open_link", (event, content) => {
         if (content.indexOf("http") != 0) {
             content = "http://" + content;
