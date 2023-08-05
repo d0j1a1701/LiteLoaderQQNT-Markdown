@@ -1,3 +1,5 @@
+**注意：main 分支适用于 9.9.0 及以下的 QQNT 版本，已经停止维护。请更新 QQNT 和 LiteLoader 并使用 v3 分支**
+
 # LiteLoaderQQNT-Markdown
 
 ## 简介
