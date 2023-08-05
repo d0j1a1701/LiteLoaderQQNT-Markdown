@@ -12,6 +12,10 @@
             "link": "https://github.com/d0j1a1701"
         }
     ],
+    "repository": {
+        "repo": "d0j1a1701/LiteLoaderQQNT-Markdown",
+        "branch": "v3"
+    },
     "platform": [
         "win32",
         "linux",
