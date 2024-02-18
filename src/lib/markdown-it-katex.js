@@ -548,7 +548,7 @@ var SETTINGS_SCHEMA = {
   },
   output: {
     type: {
-      enum: ["htmlAndMathml", "html", "mathml"]
+      enum: ["mathml", "htmlAndMathml", "html"]
     },
     description: "Determines the markup language of the output.",
     cli: "-F, --format <type>"

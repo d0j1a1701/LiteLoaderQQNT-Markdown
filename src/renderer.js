@@ -41,12 +41,14 @@ function loadCSSFromURL(url) {
     document.head.appendChild(link);
 }
 
+onLoad();
+
 function onLoad() {
     const plugin_path = LiteLoader.plugins.markdown_it.path.plugin;
 
-    loadCSSFromURL(`llqqnt://local-file/${plugin_path}/src/style/markdown.css`);
-    loadCSSFromURL(`llqqnt://local-file/${plugin_path}/src/style/hljs-github.css`);
-    loadCSSFromURL(`llqqnt://local-file/${plugin_path}/src/style/katex.css`);
+    loadCSSFromURL(`local:///${plugin_path}/src/style/markdown.css`);
+    loadCSSFromURL(`local:///${plugin_path}/src/style/hljs-github-dark.css`);
+    loadCSSFromURL(`local:///${plugin_path}/src/style/katex.css`);
 
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
@@ -62,6 +64,6 @@ function onLoad() {
 }
 
 // 打开设置界面时触发
-function onConfigView(view) { }
+function onSettingWindowCreated(view) { }
 
-export { onLoad };
+// export { onLoad };
