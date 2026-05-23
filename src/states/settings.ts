@@ -23,6 +23,10 @@ export interface SettingStateProperties {
     fileOutput: boolean; // If false, mditLogger will not add log into log file.
     enableElementCapture: boolean;
     showOriginalButton: boolean;
+
+    // Render settings
+    renderMermaid: boolean;
+    renderLatexBlock: boolean;
 }
 
 export interface SettingStateAction {
@@ -63,6 +67,10 @@ export const useSettingsStore = create<SettingStateProperties & SettingStateActi
             fileOutput: true,
             enableElementCapture: false,
             showOriginalButton: false,
+
+            // Render settings
+            renderMermaid: true,
+            renderLatexBlock: true,
 
 
             forceUnescapeBeforeHighlight: () => {

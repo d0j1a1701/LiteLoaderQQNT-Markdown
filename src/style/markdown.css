@@ -106,6 +106,130 @@ span>p>img {
     height: auto;
 }
 
+.mdit-mermaid-clickable {
+    cursor: default;
+}
+
+.mdit-mermaid-expand-button {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    color: #1f1f1f;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    opacity: 0.85;
+}
+
+.mdit-mermaid-expand-button:hover {
+    opacity: 1;
+}
+
+.mdit-mermaid-expand-button svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.mdit-mermaid-preview-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.mdit-mermaid-preview-panel {
+    display: flex;
+    flex-direction: column;
+    width: min(96vw, 1400px);
+    height: min(90vh, 1000px);
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.mdit-mermaid-preview-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.24);
+    background: #ffffff;
+}
+
+.mdit-mermaid-preview-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f1f1f;
+}
+
+.mdit-mermaid-preview-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mdit-mermaid-preview-close {
+    border: 0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #1f1f1f;
+    background: rgba(127, 127, 127, 0.12);
+}
+
+.mdit-mermaid-preview-viewport {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    background: #ffffff;
+    cursor: grab;
+}
+
+.mdit-mermaid-preview-viewport.is-dragging {
+    cursor: grabbing;
+}
+
+.mdit-mermaid-preview-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 0 0;
+    will-change: transform;
+    user-select: none;
+    touch-action: none;
+}
+
+.mdit-mermaid-preview-content {
+    display: inline-block;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.mdit-mermaid-preview-content > svg {
+    display: block;
+    margin: 0 auto;
+    max-width: none !important;
+    height: auto;
+}
+
 /* Border radius for fenced code block */
 pre.hl-code-block,
 div.katex-block-rendered {

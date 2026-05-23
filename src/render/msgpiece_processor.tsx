@@ -3,7 +3,8 @@ import React from 'react';
 import markdownIt from 'markdown-it';
 import { renderToString } from 'react-dom/server';
 const hljs = require('highlight.js');
-import katex from '@/lib/markdown-it-katex';
+import katexPlugin from '@/lib/markdown-it-katex';
+import katex from 'katex';
 
 // Components
 import { HighLightedCodeBlock, renderInlineCodeBlockString } from '@/components/code_block';
@@ -67,10 +68,24 @@ function getMarkdownIns() {
 
         // custom highlight UI renderer for markdown it.
         highlight: function (str, lang) {
+            if (lang === 'mermaid') {
+                if (useSettingsStore.getState().renderMermaid) {
+                    return `<div class="mdit-mermaid-block" data-mermaid="${encodeURIComponent(str)}"></div>`;
+                }
+            }
+            if (lang === 'latex' || lang === 'tex') {
+                if (useSettingsStore.getState().renderLatexBlock) {
+                    try {
+                        return katex.renderToString(str, { displayMode: true, throwOnError: false });
+                    } catch (e) {
+                        return renderToString(<HighLightedCodeBlock content={str} lang='plaintext' markdownItIns={localMarkdownItIns} />);
+                    }
+                }
+            }
             return (renderToString(<HighLightedCodeBlock content={str} lang={lang}
                 markdownItIns={localMarkdownItIns} />));
         },
-    }).use(katex);
+    }).use(katexPlugin);
     localMarkdownItIns.renderer.rules.code_inline = renderInlineCodeBlockString;
     markdownItIns = localMarkdownItIns;
     return localMarkdownItIns;

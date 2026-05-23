@@ -78,6 +78,21 @@ export function SettingPage() {
             </setting-panel>
         </setting-section>
 
+        <setting-section data-title="渲染功能">
+            <setting-panel>
+                <setting-list data-direction='column'>
+                    <SwitchSettingTile
+                        settingName='renderMermaid'
+                        title='Mermaid 图表渲染'
+                        caption='启用后，```mermaid 代码块将被渲染为图表。'/>
+                    <SwitchSettingTile
+                        settingName='renderLatexBlock'
+                        title='LaTeX 代码块渲染'
+                        caption='启用后，```latex 和 ```tex 代码块将被渲染为公式（与 $$ 语法效果相同）。'/>
+                </setting-list>
+            </setting-panel>
+        </setting-section>
+
         <setting-section data-title="开发者调试（请慎重修改此部分设置）">
             <setting-panel>
                 <setting-list data-direction='column'>
